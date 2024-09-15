@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Library Project</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!----- Modal Trigger Button ------>
+    <h1 class="text-center">Library</h1>
+    <p class="text-center">
+      <button id="btn" type="button">Add Books</button>
+    </p>
+
+    <div id="modal-fade" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <button class="close">
+          <span aria-hidden="true">x</span>
+        </button>
+        <div class="modal-header">
+          <h2 class="text-center">Add Book</h2>
+        </div>
+
+        <div class="modal-body">
+          <div id="errors"></div>
+
+          <form id="new-book-form">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input id="title" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="author">Author</label>
+              <input id="author" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="pages">Number Of Pages</label>
+              <input id="pages" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="desc">Description</label>
+              <input id="desc" type="text" class="form-control" />
+            </div>
+
+              <div class="form-group">
+                <label for="read" class="text-center">Read:</label>
+                <input type="checkbox"/>
+              </div>
+              </br>
+
+            <div class="modal-footer">
+              <button id="btnNewBook">Enter Book</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="library"></div>
+    </div>
+
+    <script src="./js/book.js"></script>
+    <script src="./js/Component/modal.js"></script>
+  </body>
+</html>
