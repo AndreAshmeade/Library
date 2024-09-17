@@ -10,7 +10,7 @@
     <!----- Modal Trigger Button ------>
     <h1 class="text-center">Library</h1>
     <p class="text-center">
-      <button id="btn" type="button">Add Books</button>
+      <button id="btn" type="button">Add Book</button>
     </p>
 
     <div id="modal-fade" class="modal">
@@ -22,10 +22,8 @@
         <div class="modal-header">
           <h2 class="text-center">Add Book</h2>
         </div>
-
         <div class="modal-body">
           <div id="errors"></div>
-
           <form id="new-book-form">
             <div class="form-group">
               <label for="title">Title</label>
@@ -43,15 +41,13 @@
               <label for="desc">Description</label>
               <input id="desc" type="text" class="form-control" />
             </div>
-
-              <div class="form-group">
-                <label for="read" class="text-center">Read:</label>
-                <input type="checkbox"/>
-              </div>
-              </br>
-
+            <div class="form-group">
+              <label for="read" class="text-center">Read:</label>
+              <input type="checkbox" id="read" />
+            </div>
+            <br />
             <div class="modal-footer">
-              <button id="btnNewBook">Enter Book</button>
+              <input type="submit"  value="Enter Book" />
             </div>
           </form>
         </div>

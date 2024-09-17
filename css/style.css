@@ -1,7 +1,9 @@
-.text-center{
-   text-align:center;
-}
+.form-control,
+.text-center {
+   text-align: center;
 
+
+}
 
 #new-book-btn {
    display: block;
@@ -15,29 +17,29 @@
    cursor: pointer;
 }
 
-.book-card{
-    display: inline-block;
-    width: 300px;
-    height: 200px;
-    margin: 10px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    text-align: center;
+.book-card {
+   display: inline-block;
+   width: 400px;
+   height: 300px;
+   margin: 10px;
+   padding: 20px;
+   border: 1px solid #ccc;
+   text-align: center;
 }
 
 .book-header {
    background-color: #333;
-   color:white;
+   color: white;
    padding: 20px;
    text-align: center;
 }
 
-.book-title{
+.book-title {
    margin: 0;
    font-size: 22px;
 }
 
-.book-author{
+.book-author {
    margin: 5px 0 0 0;
    font-size: 18px;
 }
@@ -47,23 +49,22 @@
    font-size: 18px;
 }
 
-.book-status{
+.book-status {
    margin: 10px 0 0 0;
    font-size: 16px;
    color: #333;
 }
 
-.read-status{
-   background-color: blue;
+.read-status {
+   background-color: yellow;
 }
-
 
 /* The Modal (background) */
 .modal {
    display: none;
    position: fixed;
    z-index: 1;
-   left:0;
+   left: 0;
    top: 0;
    width: 100%;
    height: 100%;
@@ -78,7 +79,7 @@
    margin: 15% auto;
    padding: 20%;
    border: 1px solid #888;
-   width:  80%;
+   width: 80%;
 }
 
 /* The Close Button */
@@ -90,7 +91,7 @@
 }
 
 .close:hover,
-.close:focus{
+.close:focus {
    color: black;
    text-decoration: none;
    cursor: pointer;
@@ -102,34 +103,33 @@
    color: black;
 }
 
-.modal-body{
- padding: 2px 16px;
- background: gray;
- color: black;
+.modal-body {
+    padding: 2px 654px;
+    background: gray;
+    color: black;
 }
 
-.modal-content{
+.modal-content {
    position: relative;
    background: gray;
    margin: auto;
    padding: 0;
    border: 1px solid #888;
    width: 80%;
-   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+   box-shadow:
+      0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
    animation-name: animatetop;
-   animation-duration: 0.4s
+   animation-duration: 0.4s;
 }
 
-
-@keyframes animatetop{
-   from {top: -300px; opacity: 0}
-   to {top: 0; opacity: 1}
+@keyframes animatetop {
+   from {
+      top: -300px;
+      opacity: 0;
+   }
+   to {
+      top: 0;
+      opacity: 1;
+   }
 }
-
-
-
-
-
-
-
-

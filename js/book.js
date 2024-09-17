@@ -5,13 +5,24 @@ const btnAddBook = document.getElementById("btnAddBook");
 
 let bookSelf = [];
 
-function Book(title, author, pages, desc) {
+function Book(title, author, pages, desc, read) {
   this.id = Math.random().toString(36).substr(2, 9);
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.desc = desc;
-  this.wasRead = false;
+  this.read = read;
+}
+
+Book.prototype.toggleRead = function () {
+  this.read = !this.read;
+};
+
+function toggleRead(index) {
+  console.log("toggle");
+  bookSelf[index].toggleRead();
+  saveToLocalStorage();
+  render();
 }
 
 const render = () => {
@@ -24,16 +35,17 @@ const render = () => {
    <div class="card-header">
     <h3 class="title">${book.title}</h3>
     <h4 class="author">${book.author}</h4>
-    <h5 class="pages">${book.pages}</h5>
+    <h5 class="pages">${book.pages} pages</h5>
    <div class="card-body">
     <p class="card-text">
       ${book.desc}
     </p>
     <p class="read-status">
-     ${book.wasRead ? "Mark as unread" : "Mark as read"}
+     ${book.read ? "Mark as read" : "Mark as unread"}
     </p>
-    <button class="remove-btn" onclick="removeBook(${i})">Remove</button>
-    </div>
+    <button  onclick="removeBook(${i})">Remove</button>
+    <button  onclick="toggleRead(${i})"> Toggle Read </button>
+   </div>
   </div>
     `;
     libraryEl.appendChild(bookEl);
@@ -44,9 +56,8 @@ const saveToLocalStorage = () => {
   localStorage.setItem("bookSelf", JSON.stringify(bookSelf));
 };
 
-const removeBook = (e) => {
-  const { bookId } = e.target.dataset;
-  bookSelf.filter((book) => book.id !== bookId);
+const removeBook = (index) => {
+  bookSelf.splice(index, 1);
   saveToLocalStorage();
   render();
 };
@@ -56,19 +67,16 @@ const addBookToLibrary = () => {
   const author = document.getElementById("author").value;
   const pages = parseInt(document.getElementById("pages").value, 10);
   const desc = document.getElementById("desc").value;
-  let book = new Book(title, author, pages, desc);
+  const read = document.getElementById("read").checked;
+  let book = new Book(title, author, pages, desc, read);
   bookSelf.push(book);
+  saveToLocalStorage();
   render();
 };
 
-btnNewBook.addEventListener("click", function () {
-  let newBookForm = document.getElementById("new-book-form");
-  newBookForm.style.display = "block";
-});
-
 document
   .querySelector("#new-book-form")
-  .addEventListener("click", function (event) {
+  .addEventListener("submit", function (event) {
     event.preventDefault();
     addBookToLibrary();
   });
